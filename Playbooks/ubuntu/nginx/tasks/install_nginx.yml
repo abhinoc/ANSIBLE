@@ -1,0 +1,22 @@
+-   name:   NGINX | Ubuntu Update
+    apt:
+     update_cache: yes
+    register: update
+
+-   debug: var=update
+
+-   name:   NGINX| Installing NGINX
+    apt:
+        name:   nginx
+        state: present
+    register: installed
+
+-   debug: var=installed
+
+-   name:   NGINX| Starting NGINX
+    service:
+        name:   nginx
+        state:  started
+    register: started
+
+-  debug: var=started

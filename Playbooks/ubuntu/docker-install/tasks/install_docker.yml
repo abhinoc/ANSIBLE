@@ -1,0 +1,13 @@
+-   name:   DOCKER | Ubuntu Update
+    apt:
+     update_cache: yes
+
+-   name:   Docker | Installing Docker
+    apt:
+        name:   docker.io
+        state:  present
+
+-   name:   DOCKER | Starting docker
+    service:
+        name:   docker
+        state:  started
